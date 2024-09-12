@@ -20,7 +20,7 @@ providing these features.
 
 ### What kind of packages are accepted?
 
-- Written in Python
+- Python packages (not necessarily written in Python; we'll take extension modules)
 - Not being maintained
 - Has some issue that prevents you from using the package in the way you'd like to use it
 

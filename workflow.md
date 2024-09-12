@@ -1,8 +1,11 @@
 # Default workflow for adding a new project to compat-fork
 
 - Fork the project's GitHub repository into the compat-fork org
-- Update the README to add a header saying this is a compat fork
-  - Example text: https://github.com/compat-fork/diagrams/pull/1/files
+- Update the repo for the new project name
+  - See template below for what to add to the README
+  - Also update the `pyproject.toml` (or wherever the project keeps its config)
+    to set the name to `compat-fork-<original name>` and update the
+    package's URLs.
 - Send a PR to make that README update. Use this PR to ensure CI runs correctly.
 - Add a `publish.yml` to build the project using Trusted Publishing. Samples:
   - https://github.com/compat-fork/PyAPNs2/blob/master/.github/workflows/publish.yml (using `build`)
@@ -15,6 +18,26 @@
   a changelog in the README)
 - Create a GitHub release, adding a tag matching the version you just added
 - Monitor the GitHub Actions tab to make sure the release finishes successfully
+
+# README template
+
+```
+# compat-fork-<NAME>
+
+[![pypi version](https://badge.fury.io/py/compat-fork-<NAME>.svg)](https://badge.fury.io/py/compat-fork-<NAME>)
+
+This is a fork of the [<NAME>](https://github.com/<OWNER>/<NAME>) library
+to add compatibility fixes. It is part of the [compat-fork](https://github.com/compat-fork) project.
+
+Compat-fork changelog:
+
+- Version 0.0.0 (September 0, 2000)
+  - Do something
+
+---
+
+Original README follows:
+```
 
 # Release workflow
 
