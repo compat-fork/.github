@@ -1,11 +1,16 @@
 # Default workflow for adding a new project to compat-fork
 
 - Fork the project's GitHub repository into the compat-fork org
-- Update the repo for the new project name
-  - See template below for what to add to the README
-  - Also update the `pyproject.toml` (or wherever the project keeps its config)
-    to set the name to `compat-fork-<original name>` and update the
-    package's URLs.
+- Optionally rename the project
+  - Tradeoff: Renaming to `compat-fork-<original name>` allows you to immediately
+    start publishing on PyPI and unblock users. An alternative is to keep the
+    original name and use the PEP 541 process to take over the project on PyPI,
+    but that takes longer.
+  - What to do if you decide to rename:
+    - See template below for what to add to the README
+    - Also update the `pyproject.toml` (or wherever the project keeps its config)
+      to set the name to `compat-fork-<original name>` and update the
+      package's URLs.
 - Send a PR to make that README update. Use this PR to ensure CI runs correctly.
 - Add a `publish.yml` to build the project using Trusted Publishing. Samples:
   - https://github.com/compat-fork/PyAPNs2/blob/master/.github/workflows/publish.yml (using `build`)
